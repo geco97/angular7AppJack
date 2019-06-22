@@ -1,0 +1,109 @@
+<app-header></app-header><br>
+<div class="container my-3 pr-3" align="center">
+    <div class="alert alert-danger {{ disalert }}" role="alert">
+           {{ errorMessage }}
+    </div>
+    <div class="card bg-light mb-3 " >
+        <div class="card-header">Mina uppgifter</div>
+        <div class="card-body">
+            <form [formGroup]="profilForms" (ngSubmit)="Update()">
+              <div class="row">
+                <div class="form-group col-md-12">
+                <h3>Användares information</h3>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="firstname">Förnamn</label>    
+                    <input type="text" formControlName="firstname" class="form-control" id="firstname" placeholder="firstname" value="{{ currentTUser.firstname }}">        
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="mellanname">mellannamn</label>
+                    <input type="text" class="form-control" formControlName="scoundname" id="mellanname" aria-describedby="mellannameHelp" placeholder="Enter mellanname" value="{{ currentTUser.scoundname }}">        
+                    <small id="mellannameHelp" class="form-text text-muted">We'll never share your mellanname with anyone else.</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="lastname">Efternamn</label>   
+                    <input type="text" formControlName="lastname" class="form-control" id="lastname" placeholder="Lastname" value="{{ currentTUser.lastname }}">        
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="birthday">Födelsedatum</label>
+                    <input type="date" class="form-control" formControlName="birthday" id="birthday" aria-describedby="DateHelp" value="{{ currentTUser.birthday }}"
+                    placeholder="Enter birthday">
+                    <small id="DateHelp" class="form-text text-muted">We'll never share your birthday with anyone else.</small>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                  <div class="form-group col-md-12">
+                      <h3>Fakturering uppgifter</h3>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="Addresslinefaktura">Fakturering addres</label>
+                      <input type="text" class="form-control" formControlName="invoicingAddress" id="Addresslinefaktura" value="{{ currentTUser.invoicingAddress }}"
+                      aria-describedby="invoicingAddressHelp" placeholder="Enter Addresslinefaktura">
+                      <small id="invoicingAddressHelp" class="form-text text-muted">We'll never share your Addresslinefaktura with anyone else.</small>
+                  </div>  
+                  <div class="form-group col-md-4">
+                      <label for="postnumber"> Fakturering postnr.</label>
+                      <input type="text" formControlName="invoicingZipCode" class="form-control" id="postnumber" placeholder="Fakturering postnr." value="{{ currentTUser.invoicingZipCode }}">
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label for="invoicecity">Fakturering Ort</label>
+                      <input type="text" formControlName="invoicingCity" class="form-control" id="invoicecity" value="{{ currentTUser.invoicingCity }}"
+                        placeholder="Fakturering Ort">        
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label for="invoicecountry">Land</label> 
+                      <input type="text" formControlName="invoicingCountry" class="form-control" id="invoicecountry" placeholder="Fakturering Land" value="{{ currentTUser.invoicingCountry }}">       
+                  </div>  
+              </div>
+              <hr/>
+              <div class="row">
+                  <div class="form-group col-md-12">
+                      <h3>Leverans uppgifter</h3>
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="Addressline">Leveransadress</label>
+                      <input type="text" class="form-control" formControlName="deliveryAddress" id="Addressline" value="{{ currentTUser.deliveryAddress }}"
+                        aria-describedby="AddresslineHelp" placeholder="Enter Leveransadress">            
+                      <small id="AddresslineHelp" class="form-text text-muted">We'll never share your Addressline with anyone
+                        else.</small>
+                      </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputZip">Postnr.</label>
+                            <input type="text" formControlName="deliveryZipCode" class="form-control" id="deliveryZipCode" placeholder="Postnr." value="{{ currentTUser.deliveryZipCode }}">
+                        </div> 
+                        <div class="form-group col-md-4">
+                            <label for="deliveryCity">Ort</label>
+                            <input type="text" formControlName="deliveryCity" class="form-control" id="deliveryCity" placeholder="Ort" value="{{ currentTUser.deliveryCity }}">       
+                        </div> 
+                        <div class="form-group col-md-4">
+                            <label for="deliveryCounty">Land</label>
+                            <input type="text" formControlName="deliveryCounty" class="form-control" id="deliveryCounty" placeholder="Land" value="{{ currentTUser.deliveryCounty }}">      
+                        </div> 
+                  
+              </div>
+              <hr/>
+              <div class="row">
+                  <div class="form-group col-md-12">
+                      <h3>Inloggning uppgifter</h3>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="inputEmail">E-post</label>
+                      <input type="email" formControlName="email" class="form-control" id="inputEmail" placeholder="E-post" value="{{ currentTUser.email }}">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="inputPassword">Lösenord</label>
+                      <input type="password" type="password" formControlName="password" class="form-control" id="inputPassword"  placeholder="Lösenord" value="{{ currentTUser.password }}">
+                  </div>
+              </div>
+              <hr/>
+              <div class="row">
+               <div class="col-md-12" align="Right">
+                  <input class="btn btn-primary" type="submit" value="Spara">
+               </div>
+
+              </div>
+            </form>
+        </div>
+     </div>
+</div>
